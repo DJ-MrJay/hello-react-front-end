@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchRandomGreeting } from './redux/actions';
+import { fetchGreeting } from './redux/actions'; // Update this import
 
 const Greeting = () => {
   const dispatch = useDispatch();
-  const randomGreeting = useSelector(state => state.randomGreeting);
+  const { randomGreeting } = useSelector((state) => state.randomGreeting);
 
   useEffect(() => {
-    dispatch(fetchRandomGreeting());
+    dispatch(fetchGreeting());
   }, [dispatch]);
 
   return (

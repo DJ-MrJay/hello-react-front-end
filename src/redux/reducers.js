@@ -1,17 +1,20 @@
+import { createSlice } from '@reduxjs/toolkit';
+import { fetchGreeting } from './actions';
+
 const initialState = {
   randomGreeting: '',
 };
 
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case 'SET_RANDOM_GREETING':
-      return {
-        ...state,
-        randomGreeting: action.payload,
-      };
-    default:
-      return state;
-  }
-};
+const greetingSlice = createSlice({
+  name: 'greeting',
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(
+      fetchGreeting.fulfilled,
+      (state, action) => ({ ...state, randomGreeting: action.payload }),
+    );
+  },
+});
 
-export default reducer;
+export default greetingSlice.reducer;

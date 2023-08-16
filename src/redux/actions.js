@@ -1,19 +1,13 @@
+import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-export const fetchRandomGreeting = () => {
-  return async dispatch => {
-    try {
-      const response = await axios.get('/api/random_greeting');
-      dispatch(setRandomGreeting(response.data.greeting));
-    } catch (error) {
-      console.error(error);
-    }
-  };
-};
+// Set the API URL for greetings
+const apiUrl = 'http://localhost:3000/api/random_greeting';
 
-export const setRandomGreeting = greeting => {
-  return {
-    type: 'SET_RANDOM_GREETING',
-    payload: greeting,
-  };
-};
+// Create an asynchronous thunk to fetch greetings
+export const fetchGreeting = createAsyncThunk('greetings/fetchGreeting', async () => {
+  const response = await axios.get(apiUrl);
+  return response.data.greeting;
+});
+
+export default fetchGreeting;
