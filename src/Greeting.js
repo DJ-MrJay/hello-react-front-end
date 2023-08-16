@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchRandomGreeting } from './store/actions';
+import { fetchRandomGreeting } from './redux/actions';
 
 const Greeting = () => {
   const dispatch = useDispatch();
