@@ -1,5 +1,6 @@
 <div align="center">
   <img src="./React-icon.png" alt="logo" width="auto"  height="200" style="margin: 20px 0;" />
+  <h2>Hello React Front-End</h2>
   <br>
 </div>
 
