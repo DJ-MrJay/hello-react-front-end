@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./React-icon.png" alt="logo" width="auto"  height="250" style="margin: 20px 0;" />
+  <img src="./React-icon.png" alt="logo" width="auto"  height="200" style="margin: 20px 0;" />
   <br>
 </div>
 
